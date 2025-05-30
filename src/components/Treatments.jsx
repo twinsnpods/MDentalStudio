@@ -24,7 +24,7 @@ const Treatments = () => {
       <h1 className="text-black text-5xl sm:text-6xl font-bold mb-8">2. Your Second Step</h1>
       <div className="flex flex-col lg:flex-row gap-12 items-center justify-center mb-16">
         <img
-          src="/boy.png"
+          src="boy.png"
           alt="Consultation"
           className="w-[300px] h-auto rounded-2xl shadow-2xl"
         />
@@ -46,7 +46,7 @@ const Treatments = () => {
           </p>
         </div>
         <img
-          src="/streetGirl.png"
+          src="streetGirl.png"
           alt="Smile"
           className="w-[300px] h-auto rounded-2xl shadow-2xl"
         />

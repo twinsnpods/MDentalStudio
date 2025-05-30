@@ -4,11 +4,11 @@ import Rct from './Rct';
 const AboutUs = () => {
   return (
     <div id="about-us" className="bg-white">
-      {/* Header Section */}
+      {/* Header Sections */}
       <div className="relative w-full px-8 py-16">
         <h1 className="text-5xl text-black text-center font-bold">About Us</h1>
         <img
-          src="/DentalStudio2.png"
+          src="DentalStudio2.png"
           alt="Dental Studio Logo"
           className="h-20 w-auto hover:scale-150 transition-transform duration-300 absolute right-10 top-1/2 transform -translate-y-1/2"
         />
@@ -38,7 +38,7 @@ const AboutUs = () => {
         {/* Image Section */}
         <div className="flex-1 flex justify-center">
           <img
-            src="/AboutUsPic.png"
+            src="AboutUsPic.png"
             alt="Dental Studio"
             className="w-[500px] h-auto rounded-2xl shadow-2xl mt-8 lg:mt-12"
           />

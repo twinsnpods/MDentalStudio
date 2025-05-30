@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-3">
           {/* Logo */}
           <img 
-            src="/DentalStudio2.png" 
+            src="DentalStudio2.png" 
             className="h-6 w-auto hover:scale-150 transition-transform duration-300" 
             alt="Dental Studio Logo"
           />

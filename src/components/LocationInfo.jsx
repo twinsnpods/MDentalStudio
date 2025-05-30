@@ -7,7 +7,7 @@ const Locationinfo = () => {
         <section className="relative w-full min-h-screen bg-black">
             {/* Background Image */}
             <img 
-                src="/bkimage.png" 
+                src="bkimage.png" 
                 alt="Dental clinic background" 
                 className="absolute inset-0 w-full h-full object-cover z-0" 
             />
