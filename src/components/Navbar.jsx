@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-3">
           {/* Logo */}
           <img 
-            src="DentalStudio2.png" 
+            src="DentalStudio2.png"
             className="h-6 w-auto hover:scale-150 transition-transform duration-300" 
             alt="Dental Studio Logo"
           />
@@ -48,7 +48,7 @@ const Navbar = () => {
             <a href="#treatments" className="hover:text-blue-400">Treatments</a>
             <a href="#about-us" className="hover:text-blue-400">About us</a>
             <a href="#contact-us" className="hover:text-blue-400">Contact us</a>
-            <button className="flex items-center gap-2 bg-gradient-to-r from-blue-400 to-cyan-400 text-black px-4 py-1 rounded-full hover:scale-105 transition">
+            <button className="flex items-center text-center gap-2 bg-gradient-to-r from-blue-400 to-cyan-400 text-black px-4 py-1 rounded-full hover:scale-105 transition">
               Book Now <FaArrowRight />
             </button>
           </div>
