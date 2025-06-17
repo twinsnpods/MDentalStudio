@@ -22,7 +22,7 @@ const Locationinfo = () => {
                 <div className="flex items-center gap-2 mt-2">
                     <FaLocationPin className="h-5 w-5 text-blue-500" />
                     <p className="text-white text-lg sm:text-xl">
-                        1234 Dental St, Tooth City, CA 90210
+                        3 Molyneux, Springs Selcourt 15
                     </p>
                 </div>
 
