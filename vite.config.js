@@ -1,17 +1,12 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig({
-  base: '/MDentalStudio/',
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/App.test.jsx', // <- make sure this matches the renamed file
-    include: ['src/**/*.test.jsx'],
-  },
-});
+  plugins: [react()],
+  server: {
+    base:"/MDentalStudio/", // Set the base path for the server
+    open: true, // Automatically open the browser when the server starts
+    port: 3001, // Specify the port for the development server
+  }
+})
