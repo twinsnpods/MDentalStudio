@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   base: '/MDentalStudio/', // ✅ base goes here, not in server
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   server: {
     open: true,
     port: 3001,
