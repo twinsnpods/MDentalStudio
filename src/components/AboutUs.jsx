@@ -10,7 +10,7 @@ const AboutUs = () => {
         <img
           src="DentalStudio2.png"
           alt="Dental Studio Logo"
-          className="h-20 w-auto hover:scale-150 transition-transform duration-300 absolute right-10 top-1/2 transform -translate-y-1/2"
+         className="hidden lg:block h-20 w-auto hover:scale-150 transition-transform duration-300 absolute right-10 top-1/2 transform -translate-y-1/2"
         />
       </div>
 
