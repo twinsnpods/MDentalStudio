@@ -7,7 +7,7 @@ const Rct = () => {
             <div className='flex flex-col gap-4 items-center justify-center bg-white pt-30'>
                 
                 {/* First row */}
-                <div className='flex flex-row gap-16 items-center justify-start bg-white ml-4 mr-4 pb-20 overflow-x-auto lg:justify-center lg:overflow-visible'>
+                <div className='w-full flex flex-row gap-16 items-center justify-start bg-white ml-4 mr-4 pb-20 overflow-x-auto lg:justify-center lg:overflow-visible'>
                     <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
                         <img src="TeethW.png"
                             alt="Dental Studio Logo"
@@ -32,7 +32,7 @@ const Rct = () => {
                 </div>
 
                 {/* Second row */}
-                <div className='flex flex-row gap-16 items-center justify-start bg-white ml-4 mr-4 pb-20 overflow-x-auto lg:justify-center lg:overflow-visible'>
+                <div className='w-full flex flex-row gap-16 items-center justify-start bg-white ml-4 mr-4 pb-20 overflow-x-auto lg:justify-center lg:overflow-visible'>
                     <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
                         <img src="bkimage.png"
                             alt="Dental Studio Logo"
