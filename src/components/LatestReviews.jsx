@@ -1,67 +1,76 @@
 import React from "react";
+import { FaStar } from "react-icons/fa6";
 
-const Rct = () => {
-    return (
-        <div id="treatments" className="flex flex-col items-center justify-center">
-            <h1 className='text-5xl text-black font-bold bg-white text-center px-4'>Restorative Care Treatments</h1>
-            <div className='flex flex-col gap-10 items-center justify-center bg-white py-10'>
+const reviews = [
+  {
+    name: "Thabo Mokoena",
+    date: "12 March 2025",
+    image: "jacob.png",
+  },
+  {
+    name: "Lerato Ndlovu",
+    date: "27 February 2025",
+    image: "theresa.png",
+  },
+  {
+    name: "Sipho Dlamini",
+    date: "3 January 2025",
+    image: "tommy.png",
+  },
+];
 
-                {/* First row */}
-                <div className="w-full overflow-x-auto lg:overflow-visible">
-                    <div className='flex flex-nowrap gap-6 px-4 lg:justify-center'>
-                        <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
-                            <img src="TeethW.png"
-                                alt="Teeth Whitening"
-                                className="w-60 h-40 object-contain border-gray-300 rounded-2xl shadow-2xl py-2 px-2" />
-                            <h1 className='text-2xl mt-2 font-bold text-black'>Teeth Whitening</h1>
-                            <p className="mt-4 mb-4 px-4 text-lg text-black text-center">Get a brighter, whiter smile with our safe and effective teeth whitening. Remove stains and enjoy lasting results with just one quick treatment.</p>
-                        </div>
-                        <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
-                            <img src="TeethC.png"
-                                alt="Teeth Cleaning"
-                                className="w-60 h-40 object-contain border-gray-300 rounded-2xl shadow-2xl py-2 px-2" />
-                            <h1 className='text-2xl mt-2 font-bold text-black'>Teeth Cleaning</h1>
-                            <p className="mt-4 mb-4 px-4 text-lg text-black text-center">Keep your smile healthy and bright with our professional teeth cleaning. Remove plaque, prevent cavities, fresh breath with a gentle treatment.</p>
-                        </div>
-                        <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
-                            <img src="TeethF.png"
-                                alt="Teeth Filing"
-                                className="w-60 h-40 object-contain border-gray-300 rounded-2xl shadow-2xl py-2 px-2" />
-                            <h1 className='text-2xl mt-2 font-bold text-black'>Teeth Filing</h1>
-                            <p className="mt-4 mb-4 px-4 text-lg text-black text-center">Smooth and reshape your teeth with professional filing. Enhance your smile and fix imperfections naturally.</p>
-                        </div>
-                    </div>
-                </div>
+const LatestReviews = () => {
+  return (
+    <div id="blog" className="bg-white flex flex-col gap-4 items-center justify-center py-20 px-4">
+      {/* Title */}
+      <h1 className="text-3xl sm:text-5xl text-black font-bold text-center pb-10">
+        Latest Reviews
+      </h1>
 
-                {/* Second row */}
-                <div className="w-full overflow-x-auto lg:overflow-visible">
-                    <div className='flex flex-nowrap gap-6 px-4 lg:justify-center'>
-                        <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
-                            <img src="bkimage.png"
-                                alt="Fluorosis"
-                                className="w-60 h-40 object-contain border-gray-300 rounded-2xl shadow-2xl py-2 px-2" />
-                            <h1 className='text-2xl mt-2 font-bold text-black'>Fluorosis</h1>
-                            <p className="mt-4 mb-4 px-4 text-lg text-black text-center">Restore your smile’s natural beauty. Our treatments reduce stains and discoloration for a confident look.</p>
-                        </div>
-                        <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
-                            <img src="boy.png"
-                                alt="Abrasion"
-                                className="w-60 h-40 object-contain border-gray-300 rounded-2xl shadow-2xl py-2 px-2" />
-                            <h1 className='text-2xl mt-2 font-bold text-black'>Abrasion</h1>
-                            <p className="mt-4 mb-4 px-4 text-lg text-black text-center">Abrasion is enamel wear from aggressive brushing or abrasive toothpaste. We help protect and restore your teeth.</p>
-                        </div>
-                        <div className='flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl bg-white min-w-[300px]'>
-                            <img src="AboutUsPic.png"
-                                alt="Tooth Removal"
-                                className="w-60 h-40 object-contain border-gray-300 rounded-2xl shadow-2xl py-2 px-2" />
-                            <h1 className='text-2xl mt-2 font-bold text-black'>Tooth Removal</h1>
-                            <p className="mt-4 mb-4 px-4 text-lg text-black text-center">Safe and comfortable extraction for damaged or overcrowded teeth, handled by our experienced team.</p>
-                        </div>
-                    </div>
-                </div>
+      {/* Cards */}
+      <div className="flex flex-col lg:flex-row gap-10 items-center justify-center w-full max-w-screen-xl">
+        {reviews.map((review, idx) => (
+          <div
+            key={idx}
+            className="flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl w-full max-w-md p-6"
+          >
+            {/* Stars */}
+            <div className="flex flex-row gap-2 items-start justify-center">
+              {[...Array(4)].map((_, i) => (
+                <FaStar key={i} className="text-2xl text-amber-300" />
+              ))}
+              <FaStar className="text-2xl text-gray-300" />
             </div>
-        </div>
-    );
+
+            {/* Title */}
+            <div className="text-2xl sm:text-3xl text-black font-bold text-center pt-4 pb-2">
+              Excellent Service!
+            </div>
+
+            {/* Body */}
+            <div className="text-md sm:text-xl text-black text-center pb-5">
+              I had a fantastic experience at Motlokwa Dental Studio. The staff was friendly,
+              and the treatment was quick and painless. My teeth have never looked better.
+              Highly recommend!
+            </div>
+
+            {/* Reviewer */}
+            <div className="flex flex-row items-center gap-4 pt-4">
+              <img
+                className="w-16 h-16 border border-gray-400 rounded-full shadow-2xl"
+                src={review.image}
+                alt={review.name}
+              />
+              <div className="text-left">
+                <h1 className="text-lg font-bold text-black">{review.name}</h1>
+                <p className="text-sm text-black">{review.date}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default Rct;
+export default LatestReviews;
