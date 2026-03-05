@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/MDentalStudio/', // ✅ base goes here, not in server
+  base: '/MobileDentist/', // ✅ base goes here, not in server
   plugins: [react(), tailwindcss()],
   server: {
     open: true,
