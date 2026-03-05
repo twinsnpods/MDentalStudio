@@ -7,97 +7,184 @@ import {
   FaSuitcaseMedical,
   FaThumbsUp,
 } from "react-icons/fa6";
+import { motion } from "motion/react";
 
-const WhyChoseUs = () => {
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const boxVariants = {
+  hidden: { y: 60, opacity: 0, scale: 0.95 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.9, ease: "easeOut" },
+  },
+  hover: {
+    scale: 1.05,
+    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    transition: { duration: 0.4 },
+  },
+};
+
+const WhyChooseUs = () => {
+  const features = [
+    { img: "1.png", label: "We're Careful" },
+    { img: "2.png", label: "We're Professionals" },
+    { img: "6.png", label: "We're Family" },
+  ];
+
   return (
     <div className="bg-white">
-      {/* Title */}
-      <div>
-        <h1 className="text-black text-3xl sm:text-5xl font-bold text-center pt-10 pb-10">
+      {/* Main Title */}
+      <motion.div
+        className="text-center pt-12 pb-10"
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <h1 className="text-black text-3xl sm:text-5xl font-bold">
           Why Choose Us?
         </h1>
-      </div>
+      </motion.div>
 
-      {/* Top Three Boxes */}
-      <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 items-center justify-center px-4 sm:px-10 pb-20">
-        {[1, 2, 6].map((img, index) => (
-          <div
+      {/* Top Three Feature Boxes */}
+      <motion.div
+        className="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-16 items-center justify-center px-6 sm:px-10 pb-16 md:pb-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {features.map((feature, index) => (
+          <motion.div
             key={index}
-            className="flex flex-col items-center justify-center border-2 border-gray-300 rounded-2xl shadow-2xl p-4 w-full sm:w-72"
+            className="flex flex-col items-center border-2 border-gray-300 rounded-2xl shadow-xl p-6 w-full max-w-xs sm:w-72 bg-white"
+            variants={boxVariants}
+            whileHover="hover"
           >
             <img
-              className="w-36 h-36 border-gray-300 rounded-3xl shadow-2xl"
-              src={`${img}.png`}
-              alt="Why Choose Us"
+              className="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-3xl shadow-lg border border-gray-200"
+              src={feature.img}
+              alt={`${feature.label} - Dr Vhulahani's Mobile Dentist`}
             />
-            <p className="text-xl sm:text-2xl text-black pt-4 pb-2 text-center capitalize">
-              {index === 0 && "we’re careful"}
-              {index === 1 && "we’re professionals"}
-              {index === 2 && "we’re family"}
+            <p className="text-xl sm:text-2xl font-semibold text-black pt-5 pb-2 text-center">
+              {feature.label}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* Section Title */}
-      <div>
-        <h1 className="text-3xl sm:text-5xl text-black font-bold text-center pt-10 pb-10">
-          Most importantly
+      {/* Most Importantly Title */}
+      <motion.div
+        className="text-center pt-10 pb-10"
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <h1 className="text-3xl sm:text-5xl text-black font-bold">
+          Most Importantly
         </h1>
-      </div>
+      </motion.div>
 
       {/* Info Rows */}
-      <div className="flex flex-col gap-10 px-4 sm:px-10 pb-20">
+      <motion.div
+        className="flex flex-col gap-12 px-6 sm:px-10 pb-16 md:pb-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {/* First Row */}
-        <div className="flex flex-col lg:flex-row gap-10 justify-center">
-          <InfoBlock
-            Icon={FaBookBookmark}
-            title="Personalized Care"
-            text="At Motlokwa Dental Studio, we focus on you. We take time to understand your concerns and create personalized treatment plans that align with your unique needs and goals."
-          />
-          <InfoBlock
-            Icon={FaHouse}
-            title="Comfortable"
-            text="Our clinic provides a warm, welcoming atmosphere to ensure your dental visits are as pleasant and stress-free as possible, with a compassionate staff ready to assist."
-          />
-          <InfoBlock
-            Icon={FaThumbsUp}
-            title="Patient-Centered"
-            text="Your comfort and satisfaction are our priorities. We aim to exceed your expectations with exceptional care focused on your convenience."
-          />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+          <motion.div variants={itemVariants}>
+            <InfoBlock
+              Icon={FaBookBookmark}
+              title="Personalized Care"
+              text="At Dr Vhulahani's mobile dental practice, we focus entirely on you. We take time to listen to your concerns and craft personalized treatment plans that match your unique needs and goals."
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <InfoBlock
+              Icon={FaHouse}
+              title="Comfortable Environment"
+              text="Our clinic offers a warm, welcoming space to make your dental visits pleasant and stress-free, supported by a compassionate team always ready to help."
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <InfoBlock
+              Icon={FaThumbsUp}
+              title="Patient-Centered Approach"
+              text="Your comfort and satisfaction are our top priorities. We strive to exceed expectations with exceptional, convenient care tailored just for you."
+            />
+          </motion.div>
         </div>
 
         {/* Second Row */}
-        <div className="flex flex-col lg:flex-row gap-10 justify-center">
-          <InfoBlock
-            Icon={FaLocationDot}
-            title="Safe Location"
-            text="Located at 3 Molyneux, Springs Selcourt 1560, our clinic is easily accessible, with flexible scheduling."
-          />
-          <InfoBlock
-            Icon={FaGear}
-            title="State-of-the-Art"
-            text="We use the latest dental technology and equipment to provide accurate diagnoses and effective treatments, ensuring the highest standard."
-          />
-          <InfoBlock
-            Icon={FaSuitcaseMedical}
-            title="Experienced"
-            text="Our team of highly experienced dentists ensures you receive expert care in every procedure. Trust us to deliver top-quality care."
-          />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+          <motion.div variants={itemVariants}>
+            <InfoBlock
+              Icon={FaLocationDot}
+              title="Convenient & Safe Location"
+              text="Medicare, Unit 1, Amanda Court, Cnr Thabo Sehume & Francis Baard, Pretoria, 0007. Easily accessible with flexible scheduling to suit your lifestyle."
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <InfoBlock
+              Icon={FaGear}
+              title="State-of-the-Art Technology"
+              text="We utilize the latest dental equipment and techniques for precise diagnoses and effective, long-lasting treatments — delivering the highest standard of care."
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <InfoBlock
+              Icon={FaSuitcaseMedical}
+              title="Highly Experienced Team"
+              text="Our team of highly experienced dentists ensures expert care in every procedure. Trust us to provide reliable, top-quality dental treatment every time."
+            />
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 const InfoBlock = ({ Icon, title, text }) => (
-  <div className="flex flex-row gap-4 items-start border-2 border-b-black rounded-xl p-4 w-full max-w-md shadow-md">
-    <Icon className="text-5xl sm:text-6xl text-black mt-1" />
+  <motion.div
+    className="flex flex-row gap-5 items-start border border-gray-300 rounded-xl p-6 w-full max-w-md bg-white shadow-md hover:shadow-xl transition-all duration-300"
+    whileHover={{ scale: 1.03 }}
+  >
+    <Icon className="text-5xl sm:text-6xl text-black flex-shrink-0 mt-1" />
     <div className="flex flex-col">
-      <h1 className="text-xl sm:text-2xl text-black font-semibold">{title}</h1>
-      <p className="text-sm sm:text-lg text-black pt-2">{text}</p>
+      <h2 className="text-xl sm:text-2xl text-black font-semibold">{title}</h2>
+      <p className="text-base sm:text-lg text-gray-800 pt-2 leading-relaxed">
+        {text}
+      </p>
     </div>
-  </div>
+  </motion.div>
 );
 
-export default WhyChoseUs;
+export default WhyChooseUs;

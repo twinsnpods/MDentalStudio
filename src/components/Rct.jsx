@@ -4,7 +4,7 @@ const Rct = () => {
     return (
         <div id="treatments" className="flex flex-col items-center justify-center">
             <h1 className='text-5xl text-black font-bold bg-white'>Restorative Care Treatments</h1>
-            <div className='flex flex-col gap-4 items-center justify-center bg-white pt-30'>
+            <div className='flex flex-col gap-4 items-center justify-center bg-white pt-30 pl-5 pr-5'>
                 
                 {/* First row */}
                 <div className='w-full flex flex-col lg:flex-row gap-16 items-center justify-start bg-white ml-4 mr-4 pb-20 overflow-x-auto lg:justify-center lg:overflow-visible'>
